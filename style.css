@@ -45,39 +45,8 @@ th {
 
 .header {
   background: linear-gradient(to top left, rgba(0, 183, 255, 0.384), #fdf907);
-  height: 200px;
   padding-top: 10px;
   text-align: center;
-}
-
-.content-info {
-  width: 90%;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.content-result {
-  width: 90%;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.left {
-  width: 50%;
-  float: left;
-}
-
-.right {
-  margin-left: 50%;
-}
-
-.field {
-  margin-top: 10px;
-}
-
-.field2 {
-  margin-top: 10px;
-  width: 5%;
 }
 
 body {
