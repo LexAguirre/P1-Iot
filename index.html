@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Internet de las cosas</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,200&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="header">
+    <h1>Calculadora de </h1>
+    <p class="azul">Ingeniería en Software</p>     
+  </div>
+
+  <div class="content">
+    <div>
+        <h2>Resultados</h2>
+        <div class="content-result">
+          
+          <h3>Entero sin signo de <span id="potencia"></span> bits</h3>
+
+          <p>Rango máximo: <span id="rangMaxSin"></span></p>          
+          <p>Rango mínimo: <span id="rangMinSin"></span></p>    
+
+          <br>
+          
+          <h3>Enteros con signo de <span id="potencia2"></span> bits</h3>
+
+          <p>Rango máximo: <span id="rangMaxCon"></span></p>          
+          <p>Rango mínimo: <span id="rangMinCon"></span></p> 
+          
+          <br>  
+
+          <button id='button' onclick="limpiar();">Reiniciar</button>
+    </div>
+
+  </div>
+
+    <script>
+      let potenciaRe = Number(prompt('Potencia a calcular'));
+      let signo = 0;
+      let max = 0;
+      let min = 0;
+
+      function limpiar(){
+        document.getElementById('button').reset();
+      }
+
+      function Max(potencia, signo) {
+        if (signo === 0) {
+          max = Math.pow(2, potencia - 1) - 1;
+          return max;
+        } else {
+          max = Math.pow(2, potencia) - 1;
+          return max;
+        }
+      }
+
+      function Min(potencia){
+        min = -(Math.pow(2, potencia - 1));
+        return min;
+      }
+
+      document.getElementById("rangMaxSin").innerHTML = Max(potenciaRe, 1);
+      document.getElementById("rangMinSin").innerHTML = 0;
+      document.getElementById("rangMaxCon").innerHTML = Max(potenciaRe, 0);
+      document.getElementById("rangMinCon").innerHTML = Min(potenciaRe);
+      document.getElementById("potencia").innerHTML = potenciaRe;
+      document.getElementById("potencia2").innerHTML = potenciaRe;
+
+      console.log();
+      console.log();
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
